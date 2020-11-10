@@ -1,0 +1,37 @@
+[{
+        "name": "Book 1",
+        "quantity": "1",
+        "oldprice": "200",
+        "newprice": "180"
+    },
+    {
+        "name": "Book 2",
+        "quantity": "1",
+        "oldprice": "350",
+        "newprice": "300"
+    },
+    {
+        "name": "Book 3",
+        "quantity": "1",
+        "oldprice": "450",
+        "newprice": "400"
+    },
+    {
+        "name": "Book 4",
+        "quantity": "1",
+        "oldprice": "550",
+        "newprice": "500"
+    },
+    {
+        "name": "Book 5",
+        "quantity": "1",
+        "oldprice": "650",
+        "newprice": "600"
+    },
+    {
+        "name": "Book 6",
+        "quantity": "1",
+        "oldprice": "750",
+        "newprice": "700"
+    }
+]

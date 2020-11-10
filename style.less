@@ -1,0 +1,420 @@
+// *, ::after, ::before {
+//     box-sizing: border-box;
+// }
+// html {
+//     font-family: sans-serif;
+//     line-height: 1.15;
+//     -webkit-text-size-adjust: 100%;
+//     -webkit-tap-highlight-color: transparent;
+// }
+// body {
+//     margin: 0;
+//     font-family: sans-serif;
+//     font-size: 1rem;
+//     font-weight: 400;
+//     line-height: 1.5;
+//     color: #212529;
+//     text-align: left;
+//     background-color: #fff;
+// }
+@secondaryColor:#e9e9e9;
+@fullWidth:100%;
+@borderRadius:4px;
+@containerWith:80%;
+@block:block;
+@auto:auto;
+@left:left;
+@right:right;
+@zero:0px;
+@center:center;
+@spaceBetween:space-between;
+@topBarPadding:10px 15px;
+@inlineBlock:inline-block;
+@labelPadding:8px 10px;
+@labelTextColor:#fff;
+@labelBg:#7BC863;
+@leftColWidth:70%;
+@column:column;
+@wrap:wrap;
+@rightColWidth:30%;
+@rightColPadding:15px 0px 0px 0px;
+@relative:relative;
+@absolute:absolute;
+@colMdWidth:28.33%;
+@colMargin:12px;
+@cardBorder:1px solid @secondaryColor;
+@offerWidth:52px;
+@offerBg:@labelBg;
+@offerPadding:4px 4px 4px 2px;
+@offerFontSize:10px;
+@cardInnerHeight:150px;
+@cardInnerPadding:20px 40px;
+@capitalize:capitalize;
+@cardFooterPadding:10px 8px;
+@bookNameFontSize:16px;
+@netPriceFontSize:14px;
+@auto:auto;
+@fontWeight:600;
+@collapse:collapse;
+@tableMarginBottom:1rem;
+@tableTextColor:#212529;
+@itemBorder:1px solid @secondaryColor;
+@itemPadding:6px;
+@itemImageWidth:26px;
+@itemNameMargin:10px;
+@btnPadding:8px 12px;
+@pointer:pointer;
+@transparent:transparent;
+@inputWrapperWidth:32px;
+@none:none;
+@totalBorder:1px solid @secondaryColor;
+@totalheaderFontSize:18px;
+@totalLiPadding:10px 12px;
+@totalLiTopPaddingNone:0px 12px;
+@width50:50%;
+@width49:49%;
+@footerMarginTop:10px;
+@width90:90%;
+@tableFirstColumnMd:10rem;
+@breakAll:break-all;
+@bottom:bottom;
+@thBorderBottom:2px solid #dee2e6;
+@middle:middle;
+@thBorderTop:1px solid #6a7988;
+@borderBox:border-box;
+
+
+/* mixins */
+.block{
+    float: left;
+    width: 100%;
+}
+.marginNonePaddingNone{
+    margin: 0;
+    padding: 0;
+}
+.flexRow{
+    display: flex;
+    flex-direction: row;
+}
+.flexColumn{
+    display: flex;
+    flex-direction:column;  
+}
+.flexCenter{
+    justify-content: center;
+    align-items: center;
+}
+.flexSpeaceBetween{
+    align-items: center;
+    justify-content: space-between;
+}
+.addCartBtn{
+    border: 1px solid #3093f3;
+    color: #3093f3;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+.formControl{
+    display: block;
+    padding: 4px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: @borderRadius;
+    width: @fullWidth;
+    text-align: center;
+}
+
+.container {
+    width:@containerWith;
+    display: @block;
+    margin: @auto;
+    left:@left;
+}
+
+.row, main {
+    .block();
+    .marginNonePaddingNone();
+}
+.top-bar {
+    .flexRow();
+    .flexSpeaceBetween();
+    width: @fullWidth;
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-color: @secondaryColor;
+    padding: @topBarPadding;
+}
+.top-bar > div {
+    display: @inlineBlock;
+    text-align: @left;
+}
+h2, p {
+    margin: @zero;
+}
+.label{
+    background:@labelBg;
+    padding: @labelPadding;
+    color: @labelTextColor;
+    
+}
+.radious { 
+    border-radius: @borderRadius;
+}
+.center {
+    text-align: @center;
+}
+.main-wrapper {
+    .flexRow();
+}
+.left-col {   
+    .flexRow();
+    flex-wrap: @wrap;
+    width: @leftColWidth;
+}
+.right-col {
+    width: @rightColWidth;
+    padding: @rightColPadding;
+}
+.col-4{
+    position: @relative;
+    width: @colMdWidth;
+    margin:@colMargin;
+    padding: @zero;
+   
+}
+.card {
+    .block();
+    .flexColumn();
+    align-items: @center;
+    border: @cardBorder;
+    
+}
+.offer {
+    width: @offerWidth;
+    position: @absolute;
+    left: @zero;
+}
+.offer-details {
+    background: @labelBg;
+    padding: @offerPadding;
+    color: @labelTextColor;
+    font-size: @offerFontSize;
+    float: @left;
+
+}
+.card-inner-section{
+padding: @cardInnerPadding;
+}
+.card-inner {
+    .flexColumn();
+    .flexCenter();
+    background: @secondaryColor;
+    width: @fullWidth;
+    height: @cardInnerHeight;
+}
+.img-responsive {
+    display: @block;
+    max-width: @fullWidth;
+    .marginNonePaddingNone();
+    width: @fullWidth;;
+}
+.details {
+    text-transform: capitalize;
+}
+.card-footer {
+    background: @secondaryColor;
+    padding: @cardFooterPadding;
+    width: @fullWidth;
+    box-sizing: @borderBox;
+}
+.book-name {
+    font-size: @bookNameFontSize;
+}
+.book-price{
+    .flexRow();
+    justify-content: @spaceBetween;
+}
+.net-price {
+    font-size: @netPriceFontSize;
+    position: @relative;
+}
+.net-price::after{
+    content: '';
+    position: @absolute;
+    top: @zero;
+    bottom: @zero;
+    left: @zero;
+    right: @zero;
+    margin: @auto;
+    width: @fullWidth;
+    height: 2.8px;
+    background: #ff0000;
+}
+.price-wrapper {
+    .flexRow();
+    .flexCenter();
+}
+.offer-price {
+    font-size: @bookNameFontSize;
+    margin-left: 8px;
+    font-weight: @fontWeight;
+}
+.add-cart {
+
+}
+.add-cart-btn {
+    .addCartBtn();
+}
+.table {
+    border-collapse: @collapse;
+    width: @fullWidth;
+    margin-bottom: @tableMarginBottom;
+    color: @tableTextColor;
+}
+.table td,
+.table th
+{
+    text-align:@left;
+}
+
+.table td + td,
+.table th + th
+{
+    text-align:@center;
+}
+thead tr th:first-child,
+tbody tr td:first-child {
+  width: @tableFirstColumnMd;
+  min-width: @tableFirstColumnMd;
+  max-width: @tableFirstColumnMd;
+  word-break: @breakAll;
+}
+.table thead th {
+    vertical-align: @bottom;
+    border-bottom: @thBorderBottom;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: @middle;
+    border-top: @thBorderTop;
+}
+
+.item {
+    .flexRow();
+    .flexSpeaceBetween();
+    border: @itemBorder;
+    padding-right: @itemPadding;
+
+}
+.item .left-section {
+    .flexRow();
+    .flexCenter();
+}
+.item-img {
+    max-width: @itemImageWidth;
+   
+}
+.item-name {
+margin-left: @itemNameMargin;
+}
+.qty {
+    .flexRow();
+    .flexSpeaceBetween();
+}
+.minus-btn, .add-btn {
+    background: @transparent;
+    border:@zero;
+    cursor: @pointer;
+    padding: @btnPadding;
+}
+.input-wrapper {
+    width: @inputWrapperWidth;
+}
+
+.form-control {
+  .formControl();
+}
+.delete {
+    cursor: @pointer;
+}
+.minus-btn:hover, .add-btn:hover {
+    background: @secondaryColor;
+
+}
+
+
+/* TOTAL SECTION*/
+ul.total {
+    .block();
+    list-style: @none;
+    .marginNonePaddingNone();
+    border: @totalBorder;
+    border-radius: @borderRadius;
+}
+ul.total .header {
+    font-size: @totalheaderFontSize;
+    font-weight: @fontWeight;
+}
+ul.total li{
+    .flexRow();
+    .flexSpeaceBetween();
+    padding: @totalLiPadding;
+}
+ul.total li.padding-y-0{
+    padding: @totalLiTopPaddingNone;
+}
+ul.total li span:first-child{
+    width:@width50;
+}
+ul.total li span:last-child{
+    width:@width49;
+    float: @right;
+    text-align: @right;
+}
+ul.total .footer{
+    background: @secondaryColor;
+    margin-top: @footerMarginTop;
+}
+@media only screen and (max-width : 979px) {
+
+    .container {
+        width: @width90;
+    }
+    thead tr th:first-child, tbody tr td:first-child {
+        width: 8rem;
+        min-width: 8rem;
+        max-width: 8rem;
+        word-break: @breakAll;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .container {
+        width: @fullWidth;
+    }
+    .left-col {
+        width: @fullWidth;
+        flex-wrap: @wrap;
+    }
+    .right-col {
+        width: @fullWidth;
+    }
+    .main-wrapper {
+        flex-direction: @column;
+    }
+.col-4 {
+    width: 44.5%;
+    margin-bottom: 24px;
+}
+}
+@media screen and (max-width: 480px){
+    .col-4 {
+        width: @fullWidth;
+    }
+}
